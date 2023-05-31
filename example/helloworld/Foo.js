@@ -1,8 +1,9 @@
-import { h, renderSlots } from '../../lib/guide-mini-vue.esm.js'
+import { h, renderSlots, getCurrentInstance } from '../../lib/guide-mini-vue.esm.js'
 
 export const Foo = {
-
+    name:'Foo',
     setup() {
+        console.log(getCurrentInstance(), 'foo');
         return {}
     },
 
@@ -10,7 +11,6 @@ export const Foo = {
         const foo = h('p', {}, 'foo')
 
         //Foo .vnode .children
-        console.log(this.$slots);
         const age = 18
         return h('div', {}, [
             renderSlots(this.$slots, 'header', {age}),
