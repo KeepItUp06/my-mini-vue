@@ -51,6 +51,9 @@ function cleanupEffect(effect){
 
 const targetMap = new Map()
 export function track(target, key) {
+
+    //targetMap -> depsMap -> dep -> effect
+
     if(!isTracking()) return
     //target -> key -> dep
     let depsMap = targetMap.get(target)
