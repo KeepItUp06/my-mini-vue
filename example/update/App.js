@@ -16,7 +16,6 @@ export default {
         })
 
         const onChangePropsDemo1 = () => {
-            console.log(123);
             props.value.foo = 'new-foo'
         }
 
